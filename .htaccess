@@ -1,0 +1,6 @@
+#.htaccess - это конфигурационный файл,
+#используемый веб-сервером Apache для управления настройками и поведением веб-сайта на уровне директории
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]

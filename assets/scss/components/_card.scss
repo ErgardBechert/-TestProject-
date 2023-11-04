@@ -1,0 +1,39 @@
+.cards__body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 600px;
+    border: 1px solid #212121;
+    padding: 25px 20px;
+
+    &__title{
+        width: 120px;
+    }
+
+    &__percent, &__year{
+        font-size: 18px;
+        padding: 0 10px 0 0;
+    }
+
+    &__price{
+        width: 110px;
+        text-align: center;
+        font-weight: 600;
+    }
+    
+}
+
+// MEDIA
+
+@media (max-width: 600px) {
+    .card{
+        flex-wrap: wrap;
+    }
+}

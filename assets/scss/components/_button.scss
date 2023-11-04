@@ -1,0 +1,14 @@
+.btn{
+    width: 250px;
+    border: none;
+    padding: 10px 70px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &_red{
+        background: #ED1C24;
+        color: #fff;
+    }
+}

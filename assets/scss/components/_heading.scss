@@ -1,0 +1,19 @@
+.title{
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+
+.subtitle{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+// MEDIA
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+    }
+}

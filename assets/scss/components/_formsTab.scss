@@ -1,0 +1,44 @@
+.forms-tab {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__label{
+        width: 48%;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    input:checked + label + .tab {
+        display: block !important;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+}
+
+.tab {
+    display: none;
+    width: 100%;
+    order: 1;
+    margin: 10px 0 0 0;
+}
+
+.form-create{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label{
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
