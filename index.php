@@ -52,7 +52,7 @@ $database = new Database();
 
                 <div class="range-block total-summ">
                     <div class="subtitle">Сумма кредита </div>
-                    <span>150000 ₽</span>
+                    <span id="totalSum">0</span>
                 </div>
 
                 <div class="forms-tab">
@@ -60,7 +60,7 @@ $database = new Database();
                     <label for="bank-tabs" class="forms-tab__label">
                         Добавить Банк
                     </label>
-                    <div class="tab">
+                    <div class="tab hidden">
                         <form action="app/controllers/createBank.php" method="POST" enctype="multipart/form-data" class="form-create">
                             <div class="form-group">
                                 <label for="logo">Логотип:</label>
@@ -89,7 +89,7 @@ $database = new Database();
                     <label for="promotion-tabs" class="forms-tab__label">
                         Добавить акцию
                     </label>
-                    <div class="tab">
+                    <div class="tab hidden">
                         <form action="app/controllers/createPromotion.php" method="POST" enctype="multipart/form-data" class="form-create">
                             <div class="form-group">
                                 <label for="background">Фон:</label>
@@ -295,6 +295,40 @@ $database = new Database();
     updateTotalSum();
     updateMonthlyPayment();
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
 
+        const totalSumElement = document.getElementById('totalSum');
+        const rangeValue1 = document.getElementById('rangevalue1');
+        const rangeValue2 = document.getElementById('rangevalue2');
+
+
+        const totalSumTarget = 150000;
+        const rangeValue1Target = 600000;
+        const rangeValue2Target = 33;
+
+
+        animateNumber(totalSumElement, totalSumTarget, 1000);
+        animateNumber(rangeValue1, rangeValue1Target, 1000);
+        animateNumber(rangeValue2, rangeValue2Target, 1000);
+    });
+
+
+    function animateNumber(targetElement, targetValue, duration) {
+        const fps = 60;
+        const interval = duration / fps;
+        const increment = (targetValue - 0) / (duration / interval);
+        let current = 0;
+
+        const timer = setInterval(function() {
+            if (current >= targetValue) {
+                clearInterval(timer);
+            } else {
+                current += increment;
+                targetElement.textContent = Math.floor(current).toLocaleString();
+            }
+        }, interval);
+    }
+</script>
 </body>
 </html>

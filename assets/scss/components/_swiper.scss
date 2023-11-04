@@ -1,5 +1,5 @@
 .swiper {
-    width: 100%;
+    width: 100% !important;
     height: 400px;
     margin: 100px 0 0 0;
 }
@@ -53,6 +53,6 @@
 
 @media (max-width: 608px) {
     .swiper {
-        width: 600px;
+        width: 600px !important;
     }
 }

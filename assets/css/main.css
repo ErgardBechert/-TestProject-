@@ -118,7 +118,7 @@ select {
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/assets/font/Montserrat-Black.ttf") format("truetype");
+  src: url("/font/Montserrat-Black.ttf") format("truetype");
   font-weight: 900;
 }
 .btn {
@@ -149,6 +149,7 @@ select {
   width: 600px;
   border: 1px solid #212121;
   padding: 25px 20px;
+  animation: slideInRight 1s forwards;
 }
 .card__title {
   width: 120px;
@@ -163,10 +164,21 @@ select {
   text-align: center;
   font-weight: 600;
 }
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
 @media (max-width: 600px) {
   .card {
     flex-wrap: wrap;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 .forms-tab {
@@ -211,6 +223,24 @@ select {
 .form-group label {
   font-size: 16px;
   font-weight: 500;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tab {
+  animation: fadeIn 0.5s ease;
+  opacity: 1;
 }
 
 .title {

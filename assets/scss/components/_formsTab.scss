@@ -9,6 +9,10 @@
         font-weight: 700;
         cursor: pointer;
     }
+    
+    input:checked + label{
+        color: #ED1C24;
+    }
 
     input:checked + label + .tab {
         display: block !important;
@@ -41,4 +45,25 @@
         font-size: 16px;
         font-weight: 500;
     }
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+  
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+  
+
+.tab {
+    animation: fadeIn 0.5s ease; 
+    opacity: 1;
 }
